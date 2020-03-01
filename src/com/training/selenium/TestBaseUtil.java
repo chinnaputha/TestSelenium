@@ -6,6 +6,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class TestBaseUtil {
 	static WebDriver driver;
 
+	/**
+	 * method for launch broswer 
+	 * @param url
+	 */
 	public static  void lanuchBrowser(String url) {
 		// set the chromedriver.exe
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
@@ -17,6 +21,11 @@ public class TestBaseUtil {
 
 		// maximize the window
 		driver.manage().window().maximize();
+	}
+	
+	
+	public static void closeBrowser(){
+		driver.close();
 	}
 
 }
