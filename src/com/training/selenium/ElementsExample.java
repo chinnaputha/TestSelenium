@@ -8,8 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 /**
- * Select example to validate selected dropdown value get list of options from
- * dropdown and validate
+ * Class to get list of tags in webpage
  * 
  * @author Chinna.Putha
  *
