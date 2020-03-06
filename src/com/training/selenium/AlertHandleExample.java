@@ -21,27 +21,25 @@ public class AlertHandleExample extends TestBaseUtil {
 		try {
 			lanuchBrowser("http://demo.automationtesting.in/Register.html");
 			driver.findElement(By.linkText("SwitchTo")).click();
-			driver.findElement(By.linkText("Frames")).click();
+			driver.findElement(By.linkText("Alerts")).click();
 			Thread.sleep(4000);
-			//driver.switchTo().frame(0);//using index position
-			//driver.switchTo().frame("singleframe"); //using name or id of iframe tag
-			WebElement frameElement =driver.findElement(By.xpath("//iframe[@id='singleframe']"));
-			driver.switchTo().frame(frameElement);//using frame WebElement
-				driver.switchTo().frame("");
-					driver.switchTo().frame("");
-					
-			driver.switchTo().defaultContent();//jump to first iframe
-			driver.findElement(By.cssSelector("div.container input[type='text']")).sendKeys("dfasdf");
+			driver.findElement(By.linkText("Alert with Textbox")).click();
 			Thread.sleep(4000);
+			driver.findElement(By.cssSelector("button[onclick='promptbox()']")).click();
+			
+			Alert al =driver.switchTo().alert();
+			Thread.sleep(4000);
+			//al.dismiss();
+			//al.getText();
+			System.out.println("alert text-->"+al.getText());
+			al.sendKeys("Alert example123");//enter the value in Alert textox
+			al.dismiss();//cancel the alert
+			
 		} catch (Exception e) {
 			//System.out.println("failed ");
 			e.printStackTrace();
 		}finally {
-			Alert al =driver.switchTo().alert();
-			al.accept();
-			al.dismiss();
-			al.getText();
-			al.sendKeys("");
+			
 			driver.close();
 		}
 		

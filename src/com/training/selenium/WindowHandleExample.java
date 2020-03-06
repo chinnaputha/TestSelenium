@@ -38,6 +38,7 @@ public class WindowHandleExample extends TestBaseUtil {
 															// abc1244
 			if(!tab.equals(parent_window_id)){
 				driver.switchTo().window(tab);//switch to child window
+				driver.manage().window().maximize();
 				driver.findElement(By.linkText("Contact")).click();
 				Thread.sleep(4000);
 				driver.close();//current window close - child window will be closed

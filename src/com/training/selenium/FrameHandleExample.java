@@ -21,26 +21,20 @@ public class FrameHandleExample extends TestBaseUtil {
 		try {
 			lanuchBrowser("http://demo.automationtesting.in/Register.html");
 			driver.findElement(By.linkText("SwitchTo")).click();
-			driver.findElement(By.linkText("Alerts")).click();
+			driver.findElement(By.linkText("Frames")).click();
 			Thread.sleep(4000);
-			driver.findElement(By.linkText("Alert with OK & Cancel")).click();
+			//driver.switchTo().frame(0);//using index position
+			//driver.switchTo().frame("singleframe"); //using name or id of iframe tag
+			WebElement frameElement =driver.findElement(By.xpath("//iframe[@id='singleframe']"));
+			driver.switchTo().frame(frameElement);//using frame WebElement
+					
+			driver.switchTo().defaultContent();//jump to first iframe
+			driver.findElement(By.cssSelector("div.container input[type='text']")).sendKeys("dfasdf");
 			Thread.sleep(4000);
-			driver.findElement(By.cssSelector("button[onclick='confirmbox()']")).click();
-			Alert al =driver.switchTo().alert();
-			Thread.sleep(4000);
-			//al.dismiss();
-			al.getText();
-			System.out.println("alert text-->"+al.getText());
-			al.accept();
-			
-			
-			//al.sendKeys("");
-			
 		} catch (Exception e) {
 			//System.out.println("failed ");
 			e.printStackTrace();
 		}finally {
-			
 			driver.close();
 		}
 		
