@@ -1,7 +1,6 @@
 package com.training.selenium;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -11,13 +10,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TestBaseUtil {
-	static WebDriver driver;
+	public  static WebDriver driver=null;
 
 	/**
 	 * method for launch broswer 
 	 * @param url
 	 */
-	public static  void lanuchBrowser(String url) {
+	public static   void lanuchBrowser(String url) {
 		// set the chromedriver.exe
 		System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 		// FirefoxDriver implements WebDriver
@@ -31,15 +30,18 @@ public class TestBaseUtil {
 	}
 	
 	
+	//@AfterSuite
 	public static void closeBrowser(){
-		driver.close();
+		driver.quit();
 	}
 	
-	
-	public static void captureScreenshot() throws Exception {
+	public  static void captureScreenshot() throws Exception {
 		String random=RandomStringUtils.randomNumeric(4);
 		File source_file = (File) ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		FileUtils.copyFile(source_file, new File("images\\screenshot"+random+".png"));
 	}
+	
+	
+	
 
 }
