@@ -1,6 +1,7 @@
 package com.training.selenium;
 
 import java.io.File;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -27,6 +28,8 @@ public class TestBaseUtil {
 
 		// maximize the window
 		driver.manage().window().maximize();
+		//implicit wait
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	
 	
