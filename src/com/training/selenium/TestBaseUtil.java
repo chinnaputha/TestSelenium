@@ -77,7 +77,7 @@ public class TestBaseUtil {
  
 			if (browser.equalsIgnoreCase("Chrome")) {
 				caps = DesiredCapabilities.chrome();
-				caps.setCapability("platform", "Windows 10");
+				caps.setCapability("platform", "Windows 10"); 
 				caps.setCapability("version", "80.0");
 				caps.setCapability("name", "MySauceTest");
 			}
