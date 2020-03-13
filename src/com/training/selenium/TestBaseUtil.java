@@ -74,7 +74,7 @@ public class TestBaseUtil {
 		DesiredCapabilities caps = null;
 
 		if (os.equalsIgnoreCase("Windows")) {
-
+ 
 			if (browser.equalsIgnoreCase("Chrome")) {
 				caps = DesiredCapabilities.chrome();
 				caps.setCapability("platform", "Windows 10");
