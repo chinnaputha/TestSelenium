@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Login"  parallel="tests" thread-count="6">
+	<test name="LoginTest_1">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="com.training.testng.CrossBrowserTestExample" />
+		</classes>
+	</test>
+	
+	<test name="LoginTest_2">
+		<parameter name="browserName" value="Chrome" />
+		<classes>
+			<class name="com.training.testng.CrossBrowserTestExample" />
+		</classes>
+	</test>
+	
+	
+	<test name="LoginTest_3">
+		<parameter name="browserName" value="ff" />
+		<classes>
+			<class name="com.training.testng.CrossBrowserTestExample" />
+		</classes>
+	</test>
+	
+	
+	<test name="LoginTest_4">
+		<parameter name="browserName" value="ff" />
+		<classes>
+			<class name="com.training.testng.CrossBrowserTestExample" />
+		</classes>
+	</test>
+	
+	
+	<test name="LoginTest_5">
+		<parameter name="browserName" value="IE" />
+		<classes>
+			<class name="com.training.testng.CrossBrowserTestExample" />
+		</classes>
+	</test>
+
+
+
+
+</suite> 
